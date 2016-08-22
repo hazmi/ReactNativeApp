@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import {
+import ReactNative from 'react-native';
+import { Standing } from './components/standing/component';
+
+const {
   StyleSheet,
   Text,
   View,
   ScrollView,
   StatusBar
-} from 'react-native';
+} = ReactNative;
 
-import { Standing } from './components/standing/component';
 
 export default class ReactNativeApp extends Component {
   render() {

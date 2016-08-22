@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-import { styles } from './styles';
+import RN from 'react-native';
 
 import { StandingItem } from '../standing-item/component';
 import { StandingHeader } from '../standing-header/component';
+import { styles } from './styles';
+
+const { 
+  StyleSheet,
+  Text,
+  View
+}  = RN;
 
 export const Standing = () => (
   <View style={styles.container}>
@@ -26,6 +27,7 @@ export const Standing = () => (
         gd: '+2',
         pts: '3'
     }}>Arsenal</StandingItem>
+
     <StandingItem data={{
         pos: '2',
         played: '1',

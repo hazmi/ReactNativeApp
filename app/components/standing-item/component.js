@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import {
+import RN from 'react-native';
+
+const { 
   StyleSheet,
   Text,
   View
-} from 'react-native';
+}  = RN;
 
 import { styles } from './styles';
 
 export class StandingItem extends Component {
   render() {
     let { pos, played, gd, pts } = this.props.data;
-    
+
     return (
       <View style={styles.club}>
         <Text style={styles.club__pos}>{ pos }</Text>
@@ -22,3 +24,5 @@ export class StandingItem extends Component {
     );
   }
 }
+
+export default StandingItem;

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import RN from 'react-native';
 
 import { styles } from './styles';
 
+const { 
+  StyleSheet,
+  Text,
+  View
+}  = RN;
+
 export class StandingHeader extends Component {
   render() {
-    let { name } = this.props;
     return (
       <View style={styles.club}>
         <Text style={styles.club__pos}>Pos</Text>
