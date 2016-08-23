@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { StandingItem } from "../component";
+import StandingItem from "../component";
 
 describe("./standing-item/component", () => {
   it("render 5 content with the correct order", () => {

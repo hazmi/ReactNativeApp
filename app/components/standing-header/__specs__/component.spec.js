@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { StandingHeader } from "../component";
+import StandingHeader from "../component";
 
 
 describe("./standing-header/component", () => {

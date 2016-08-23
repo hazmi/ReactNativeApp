@@ -1,39 +1,40 @@
 import React, { Component } from 'react';
 import RN from 'react-native';
 
-import { StandingItem } from '../standing-item/component';
-import { StandingHeader } from '../standing-header/component';
-import { styles } from './styles';
+import StandingItem from '../standing-item/component';
+import StandingHeader from '../standing-header/component';
+import styles from './styles';
 
 const { 
-  StyleSheet,
   Text,
   View
-}  = RN;
+} = RN;
 
-export const Standing = () => (
-  <View style={styles.container}>
-    <View style={styles.title}>
-      <Text style={styles.title__text}>
-        Premier League 2016/2017
-      </Text>
-    </View>
+export class Standing extends Component {
+  render() {
+    let { standing } = this.props;
 
-    <StandingHeader />
+    return (
+      <View style={styles.container}>
+        <View style={styles.title}>
+          <Text style={styles.title__text}>
+            Premier League 2016/2017
+          </Text>
+        </View>
+        <StandingHeader />
+        {standing.map((club) => {
+          return (
+            <StandingItem key={ 'club-' + club.pos } data={{
+                pos: club.pos,
+                played: club.played,
+                gd: club.gd,
+                pts: club.pts
+            }}>{ club.name }</StandingItem>
+          );
+        })}
+      </View>
+    );
+  }
+}
 
-    <StandingItem data={{
-        pos: '1',
-        played: '1',
-        gd: '+2',
-        pts: '3'
-    }}>Arsenal</StandingItem>
-
-    <StandingItem data={{
-        pos: '2',
-        played: '1',
-        gd: '-2',
-        pts: '0'
-    }}>Livepool</StandingItem>
-
-  </View>
-);
+export default Standing;

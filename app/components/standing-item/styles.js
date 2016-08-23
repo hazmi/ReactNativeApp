@@ -39,3 +39,5 @@ export const styles = StyleSheet.create({
     color: '#38003c',
   },
 });
+
+export default styles;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import RN from 'react-native';
 
-import { styles } from './styles';
+import styles from './styles';
 
 const { 
-  StyleSheet,
   Text,
   View
-}  = RN;
+} = RN;
 
 export class StandingHeader extends Component {
   render() {
@@ -22,3 +21,5 @@ export class StandingHeader extends Component {
     );
   }
 }
+
+export default StandingHeader;

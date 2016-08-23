@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import RN from 'react-native';
 
+import styles from './styles';
+
 const { 
-  StyleSheet,
   Text,
   View
 }  = RN;
-
-import { styles } from './styles';
 
 export class StandingItem extends Component {
   render() {
