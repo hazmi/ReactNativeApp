@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
 
 import standing from './components/standing/reducer';
 
@@ -7,7 +8,8 @@ var reducers = combineReducers({
 });
 
 let store = createStore(
-    reducers
+    reducers,
+    applyMiddleware( thunk )
 );
 
 export default store;

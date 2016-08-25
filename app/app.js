@@ -28,8 +28,28 @@ export default class ReactNativeApp extends Component {
   }
 }
 
-// temporary dummy data
-store.dispatch( StandingAction.clearClubs() );
-store.dispatch( StandingAction.addClub('1', 'Arsenal', '1', '+3', '3') );
-store.dispatch( StandingAction.addClub('2', 'Liverpool', '1', '+2', '1') );
-store.dispatch( StandingAction.addClub('3', 'Stoke', '1', '-1', '0') );
+
+function syncStandingWithAPI(dispatch){
+  fetch('https://api.football-data.org/v1/competitions/426/leagueTable')
+    .then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      json.standing.map((club) => {
+        dispatch( StandingAction.addClub(
+          club.position,
+          club.teamName,
+          club.playedGames,
+          club.goalDifference,
+          club.points
+        ) );
+      });
+    }).catch(function(ex) { });
+}
+
+function syncStandingData() {  
+  return (dispatch) => {
+    syncStandingWithAPI(dispatch);
+  };
+}
+
+store.dispatch(syncStandingData());

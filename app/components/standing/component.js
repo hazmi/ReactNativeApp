@@ -6,6 +6,7 @@ import StandingHeader from '../standing-header/component';
 import styles from './styles';
 
 const { 
+  ScrollView,
   Text,
   View
 } = RN;
@@ -16,22 +17,26 @@ export class Standing extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.title__text}>
-            Premier League 2016/2017
-          </Text>
+        <View>
+          <View style={styles.title}>
+            <Text style={styles.title__text}>
+              Premier League 2016/2017
+            </Text>
+          </View>
+          <StandingHeader />
         </View>
-        <StandingHeader />
-        {standing.map((club) => {
-          return (
-            <StandingItem key={ 'club-' + club.pos } data={{
-                pos: club.pos,
-                played: club.played,
-                gd: club.gd,
-                pts: club.pts
-            }}>{ club.name }</StandingItem>
-          );
-        })}
+        <ScrollView>
+          {standing.map((club) => {
+            return (
+              <StandingItem key={ 'club-' + club.name } data={{
+                  pos: club.pos,
+                  played: club.played,
+                  gd: club.gd,
+                  pts: club.pts
+              }}>{ club.name }</StandingItem>
+            );
+          })}
+        </ScrollView>
       </View>
     );
   }
