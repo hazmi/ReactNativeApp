@@ -1,28 +1,16 @@
 import React, { Component } from 'react';
-import RN from 'react-native';
 import { Provider } from 'react-redux'
 
 import store from './store';
 import Standing from './components/standing/container';
 import StandingAction from './components/standing/action';
 
-const {
-  View,
-  StatusBar
-} = RN;
-
 
 export default class ReactNativeApp extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={{ flex:1 } }>
-          <StatusBar
-            backgroundColor="red"
-            barStyle="light-content"
-          />
-          <Standing />
-        </View>
+        <Standing />
       </Provider>
     );
   }
@@ -34,6 +22,8 @@ function syncStandingWithAPI(dispatch){
     .then(function(response) {
       return response.json();
     }).then(function(json) {
+      dispatch( StandingAction.updateTitle( json.leagueCaption ) );
+
       json.standing.map((club) => {
         dispatch( StandingAction.addClub(
           club.position,

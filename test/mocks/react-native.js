@@ -22,9 +22,7 @@ const createComponent = (type) => {
 
 RN.View = createComponent("View");
 RN.Text = createComponent("Text");
-RN.ActivityIndicatorIOS = createComponent("ActivityIndicatorIOS");
-RN.Image = createComponent("Image");
-RN.TouchableHighlight = createComponent("TouchableHighlight");
 RN.ScrollView = createComponent("ScrollView");
+RN.StatusBar = createComponent("StatusBar");
 
 export default RN;

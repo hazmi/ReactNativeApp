@@ -3,14 +3,13 @@ import thunk from 'redux-thunk';
 
 import standing from './components/standing/reducer';
 
-var reducers = combineReducers({
+const reducers = combineReducers({
   standing: standing
 });
 
-let store = createStore(
+const store = createStore(
     reducers,
     applyMiddleware( thunk )
 );
 
 export default store;
-

@@ -8,7 +8,8 @@ import styles from './styles';
 const { 
   ScrollView,
   Text,
-  View
+  View,
+  StatusBar
 } = RN;
 
 export class Standing extends Component {
@@ -17,16 +18,20 @@ export class Standing extends Component {
 
     return (
       <View style={styles.container}>
+        <StatusBar
+          backgroundColor="red"
+          barStyle="light-content"
+        />
         <View>
           <View style={styles.title}>
             <Text style={styles.title__text}>
-              Premier League 2016/2017
+              { standing.title }
             </Text>
           </View>
           <StandingHeader />
         </View>
         <ScrollView>
-          {standing.map((club) => {
+          {standing.clubs.map((club) => {
             return (
               <StandingItem key={ 'club-' + club.name } data={{
                   pos: club.pos,

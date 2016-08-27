@@ -16,5 +16,11 @@ export const clearClubs = () => {
     type: 'CLEAR_CLUBS'
   }
 }
+export const updateTitle = (title) => {
+  return {
+    type: 'UPDATE_TITLE',
+    title
+  }
+}
 
-export default { addClub, clearClubs };
+export default { addClub, clearClubs, updateTitle };

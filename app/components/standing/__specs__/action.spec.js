@@ -23,6 +23,7 @@ describe('./standing/action', () => {
       expect( actions.addClub(pos, name, played, gd, pts) ).to.deep.equal( expectedResult );
     });
   });
+
   describe('#clearClub', () => {
     it('should create an action to clear clubs', () => {
 
@@ -31,6 +32,18 @@ describe('./standing/action', () => {
       };
 
       expect( actions.clearClubs() ).to.deep.equal( expectedResult );
+    });
+  });
+
+  describe('#updateTitle', () => {
+    it('should create an action to update title', () => {
+
+      const expectedResult = {
+        type: 'UPDATE_TITLE',
+        title: 'League Title'
+      };
+
+      expect( actions.updateTitle('League Title') ).to.deep.equal( expectedResult );
     });
   });
 })

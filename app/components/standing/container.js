@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Component from './component';
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     standing: state.standing
   }
