@@ -13,6 +13,10 @@ const {
 } = RN;
 
 export class Standing extends Component {
+  componentDidMount() {
+    this.props.updateClubs();
+  }
+
   render() {
     let { standing } = this.props;
 
