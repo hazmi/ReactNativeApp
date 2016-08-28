@@ -16,6 +16,7 @@ export const clearClubs = () => {
     type: 'CLEAR_CLUBS'
   }
 }
+
 export const updateTitle = (title) => {
   return {
     type: 'UPDATE_TITLE',
@@ -23,4 +24,11 @@ export const updateTitle = (title) => {
   }
 }
 
-export default { addClub, clearClubs, updateTitle };
+export const updateRefreshState = (isRefreshing) => {
+  return {
+    type: 'UPDATE_REFRESH_STATE',
+    isRefreshing
+  }
+}
+
+export default { addClub, clearClubs, updateTitle, updateRefreshState };

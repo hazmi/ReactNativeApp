@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import Component from './component';
-import { updateTitle, addClub } from './action';
+import { updateTitle, addClub, updateRefreshState, clearClubs } from './action';
 
 function syncStandingWithAPI(dispatch){
-  console.log('fetch');
   fetch('https://api.football-data.org/v1/competitions/426/leagueTable')
     .then(function(response) {
-      console.log('response', response);
       return response.json();
     }).then(function(json) {
       dispatch( updateTitle( json.leagueCaption ) );
+      dispatch( clearClubs() );
 
       json.standing.map((club) => {
         dispatch( addClub(
@@ -20,25 +19,30 @@ function syncStandingWithAPI(dispatch){
           club.points
         ) );
       });
+
+      dispatch( updateRefreshState( false ) );
     }).catch(function(ex) { });
 }
 
-function syncStandingData() {  
+function syncStandingData() {
   return (dispatch) => {
     syncStandingWithAPI(dispatch);
   };
 }
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = ( state ) => {
   return {
     standing: state.standing
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = ( dispatch ) => {
   return {
     updateClubs: () => {
       dispatch( syncStandingData() )
+    },
+    updateRefreshState: ( isRefreshing ) => {
+      dispatch( updateRefreshState( isRefreshing ) )
     }
   }
 }

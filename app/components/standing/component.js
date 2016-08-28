@@ -9,7 +9,8 @@ const {
   ScrollView,
   Text,
   View,
-  StatusBar
+  StatusBar,
+  TouchableHighlight
 } = RN;
 
 export class Standing extends Component {
@@ -18,19 +19,30 @@ export class Standing extends Component {
   }
 
   render() {
-    let { standing } = this.props;
+    let { standing, updateRefreshState, updateClubs } = this.props;
+    let refreshStyle = [styles.refreshText];
+    if( standing.isRefreshing ) {
+      refreshStyle.push( styles.refreshDisabled );
+    }
 
     return (
       <View style={styles.container}>
-        <StatusBar
-          backgroundColor="red"
-          barStyle="light-content"
-        />
+        <StatusBar barStyle="light-content" />
         <View>
-          <View style={styles.title}>
-            <Text style={styles.title__text}>
-              { standing.title }
-            </Text>
+          <View style={ styles.titleWrapper }>
+            <View style={ styles.title }>
+              <Text style={ styles.title__text }>
+                { standing.title }
+              </Text>
+            </View>
+            <View style={ styles.refreshButton }>
+              <TouchableHighlight onPress={ () => {
+                  updateRefreshState( true );
+                  updateClubs();
+                }}>
+                <Text style={ refreshStyle }>Refresh</Text>
+              </TouchableHighlight>
+            </View>
           </View>
           <StandingHeader />
         </View>

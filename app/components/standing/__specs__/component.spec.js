@@ -47,6 +47,6 @@ describe("./standing/component", () => {
     let component = <Standing standing={ data } />;
     let wrapper = shallow(component);
 
-    expect( wrapper.find('ScrollView').children().length ).to.equal( 2 );
+    expect( wrapper.find('StandingItem').length ).to.equal( 2 );
   });
 });

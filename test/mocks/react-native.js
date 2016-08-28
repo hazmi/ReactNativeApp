@@ -24,5 +24,6 @@ RN.View = createComponent("View");
 RN.Text = createComponent("Text");
 RN.ScrollView = createComponent("ScrollView");
 RN.StatusBar = createComponent("StatusBar");
+RN.TouchableHighlight = createComponent("TouchableHighlight");
 
 export default RN;

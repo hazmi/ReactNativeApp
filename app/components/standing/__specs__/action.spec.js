@@ -46,5 +46,17 @@ describe('./standing/action', () => {
       expect( actions.updateTitle('League Title') ).to.deep.equal( expectedResult );
     });
   });
+
+  describe('#updateRefreshState', () => {
+    it('should create an action to update title', () => {
+
+      const expectedResult = {
+        type: 'UPDATE_REFRESH_STATE',
+        isRefreshing: true
+      };
+
+      expect( actions.updateRefreshState( true ) ).to.deep.equal( expectedResult );
+    });
+  });
 })
 

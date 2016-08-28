@@ -1,6 +1,6 @@
 const initialState = {
   title: '',
-  isRefreshing: false,
+  isRefreshing: true,
   clubs: []
 };
 
@@ -9,6 +9,11 @@ export const reducer = (state = initialState, action) => {
     case "UPDATE_TITLE":
       return Object.assign({}, state, {
         title: action.title
+      });
+
+    case "UPDATE_REFRESH_STATE":
+      return Object.assign({}, state, {
+        isRefreshing: action.isRefreshing
       });
 
     case "ADD_CLUB":
@@ -25,8 +30,6 @@ export const reducer = (state = initialState, action) => {
           }
         ] 
       });
-
-
 
     case "CLEAR_CLUBS":
       return Object.assign({}, state, {

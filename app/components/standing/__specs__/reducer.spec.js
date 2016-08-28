@@ -8,7 +8,7 @@ describe("./standing/reducer", () => {
 
     const expectedResult = {
       title: '',
-      isRefreshing: false,
+      isRefreshing: true,
       clubs: []
     }
 
@@ -22,6 +22,15 @@ describe("./standing/reducer", () => {
     });
 
     expect( state.title ).to.equal( "Premier League 2016/2017" );
+  });
+
+  it("can update refresh state", () => {
+    let state = reducer([], {
+      type: "UPDATE_REFRESH_STATE",
+      isRefreshing: true
+    });
+
+    expect( state.isRefreshing ).to.equal( true );
   });
 
   it("can add club data to the empty store", () => {
