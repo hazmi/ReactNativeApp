@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     height: 44,
     alignItems: 'center',
     flexDirection: 'row',
-    borderBottomColor: 'rgba(255, 255, 255, 0.5)',
+    borderBottomColor: '#fdfdfd',
     borderBottomWidth: 1,
     backgroundColor: '#fff',
   },

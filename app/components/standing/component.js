@@ -27,7 +27,9 @@ export class Standing extends Component {
 
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar 
+          backgroundColor="#e90052"
+          barStyle="light-content" />
         <View>
           <View style={ styles.titleWrapper }>
             <View style={ styles.title }>

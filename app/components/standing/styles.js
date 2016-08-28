@@ -8,12 +8,13 @@ export const styles = StyleSheet.create({
   titleWrapper: {
     flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
     height: 64,
     paddingTop: 24,
     paddingLeft: 8,
     paddingRight: 8,
     paddingBottom: 8,
-    borderBottomColor: 'rgba(255, 255, 255, 0.5)',
+    borderBottomColor: '#e27a9f',
     borderBottomWidth: 1,
     backgroundColor: '#e90052'
   },
@@ -21,16 +22,17 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   title__text: {
-    paddingTop: 7,
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
   },
   refreshButton: {
-    paddingTop: 7,
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 30,
     paddingLeft: 7,
     paddingRight: 7,
-    borderColor: 'rgba(255, 255, 255, 0.5)',
+    borderColor: '#e27a9f',
     borderWidth: 1,
     borderRadius: 3
   },
@@ -40,7 +42,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   refreshDisabled: {
-    color: 'rgba(255,255,255,0.5)'
+    color: '#e27a9f'
   }
 });
 
