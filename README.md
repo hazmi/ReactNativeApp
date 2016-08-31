@@ -2,7 +2,7 @@
 
 This is a demo of [React Native](https://facebook.github.io/react-native/) app. It's English Premiere League Standing app. 
 The app is using real league data, provided by [Footbal Data API](http://api.football-data.org/). The app can be run in 
-iOS and Android and its using the same code. Covered with unit itests and using modular approach for the structure.
+iOS and Android and its using the same code. Covered with unit tests and using modular approach for the structure.
 
 ### Feature Summary
 
