@@ -1,22 +1,22 @@
 const initialState = {
   title: '',
   isRefreshing: true,
-  clubs: []
+  clubs: [],
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "UPDATE_TITLE":
+    case 'UPDATE_TITLE':
       return Object.assign({}, state, {
-        title: action.title
+        title: action.title,
       });
 
-    case "UPDATE_REFRESH_STATE":
+    case 'UPDATE_REFRESH_STATE':
       return Object.assign({}, state, {
-        isRefreshing: action.isRefreshing
+        isRefreshing: action.isRefreshing,
       });
 
-    case "ADD_CLUB":
+    case 'ADD_CLUB': {
       const { pos, name, played, gd, pts } = action.data;
       return Object.assign({}, state, {
         clubs: [
@@ -26,20 +26,20 @@ export const reducer = (state = initialState, action) => {
             name,
             played,
             gd,
-            pts
-          }
-        ] 
+            pts,
+          },
+        ],
       });
+    }
 
-    case "CLEAR_CLUBS":
+    case 'CLEAR_CLUBS':
       return Object.assign({}, state, {
-        clubs: []
+        clubs: [],
       });
 
     default:
       return state;
   }
-}
+};
 
 export default reducer;
-

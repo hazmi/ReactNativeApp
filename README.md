@@ -11,6 +11,7 @@ iOS and Android and its using the same code. Covered with unit tests and using m
 * Tests using Airbnb's [Enzyme](https://github.com/airbnb/enzyme) with [Mocha](https://mochajs.org/) + [Chai](http://chaijs.com/)
 * Using [Redux](http://redux.js.org/) with [Thunk](https://github.com/gaearon/redux-thunk) to manage store
 * API data are using [Footbal Data API](http://api.football-data.org/)
+* Enable code linting with [ESLint](http://eslint.org/)
 
 ## Prerequisite
 
@@ -68,3 +69,15 @@ To run the tests, run the following command:
 npm test
 ```
 You should see the test output on your screen with all the tests passing nicely.
+
+## Code Lint
+To guard the code at the earliest possible, without even need to execute the code. It can detect syntax error and 
+other silly mistakes. It can also make the code more beautiful and easy to read.
+
+In here, it use [ESLint](http://eslint.org/) with [Airbnb's config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). 
+
+To run the code linting, run the following command:
+
+```sh
+npm run lint
+```

@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import RN from 'react-native';
 
-import styles from './styles';
+import { styles } from './styles';
 
-const { 
+const {
   Text,
-  View
-}  = RN;
+  View,
+} = RN;
 
-export class StandingItem extends Component {
-  render() {
-    let { pos, played, gd, pts } = this.props.data;
+export const StandingItem = ({ data, children }) => (
+  <View style={styles.club}>
+    <Text style={styles.club__pos}>{ data.pos }</Text>
+    <Text style={styles.club__name}>{ children }</Text>
+    <Text style={styles.club__played}>{ data.played }</Text>
+    <Text style={styles.club__gd}>{ data.gd }</Text>
+    <Text style={styles.club__pts}>{ data.pts }</Text>
+  </View>
+);
 
-    return (
-      <View style={styles.club}>
-        <Text style={styles.club__pos}>{ pos }</Text>
-        <Text style={styles.club__name}>{ this.props.children }</Text>
-        <Text style={styles.club__played}>{ played }</Text>
-        <Text style={styles.club__gd}>{ gd }</Text>
-        <Text style={styles.club__pts}>{ pts }</Text>
-      </View>
-    );
-  }
-}
+StandingItem.propTypes = {
+  data: PropTypes.object.isRequired,
+  children: PropTypes.string.isRequired,
+};
 
 export default StandingItem;

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#eee'
+    backgroundColor: '#eee',
   },
   titleWrapper: {
     flex: 1,
@@ -16,15 +16,15 @@ export const styles = StyleSheet.create({
     paddingBottom: 8,
     borderBottomColor: '#e27a9f',
     borderBottomWidth: 1,
-    backgroundColor: '#e90052'
+    backgroundColor: '#e90052',
   },
   title: {
     flex: 1,
   },
   title__text: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   refreshButton: {
     flexDirection: 'row',
@@ -34,16 +34,16 @@ export const styles = StyleSheet.create({
     paddingRight: 7,
     borderColor: '#e27a9f',
     borderWidth: 1,
-    borderRadius: 3
+    borderRadius: 3,
   },
   refreshText: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 12,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   refreshDisabled: {
-    color: '#e27a9f'
-  }
+    color: '#e27a9f',
+  },
 });
 
 export default styles;

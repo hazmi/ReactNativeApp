@@ -1,27 +1,27 @@
 import { connect } from 'react-redux';
+import { fetch } from 'fetch';
 import Component from './component';
 import { updateTitle, addClub, updateRefreshState, clearClubs } from './action';
 
-function syncStandingWithAPI(dispatch){
+function syncStandingWithAPI(dispatch) {
   fetch('https://api.football-data.org/v1/competitions/426/leagueTable')
-    .then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      dispatch( updateTitle( json.leagueCaption ) );
-      dispatch( clearClubs() );
+    .then((response) => response.json())
+    .then((json) => {
+      dispatch(updateTitle(json.leagueCaption));
+      dispatch(clearClubs());
 
-      json.standing.map((club) => {
-        dispatch( addClub(
+      json.standing.map((club) =>
+        dispatch(addClub(
           club.position,
           club.teamName,
           club.playedGames,
           club.goalDifference,
           club.points
-        ) );
-      });
+        ))
+      );
 
-      dispatch( updateRefreshState( false ) );
-    }).catch(function(ex) { });
+      dispatch(updateRefreshState(false));
+    }).catch(() => {});
 }
 
 function syncStandingData() {
@@ -30,27 +30,23 @@ function syncStandingData() {
   };
 }
 
-export const mapStateToProps = ( state ) => {
-  return {
-    standing: state.standing
-  }
-}
+export const mapStateToProps = (state) => ({
+  standing: state.standing,
+});
 
-const mapDispatchToProps = ( dispatch ) => {
-  return {
-    updateClubs: () => {
-      dispatch( syncStandingData() )
-    },
-    updateRefreshState: ( isRefreshing ) => {
-      dispatch( updateRefreshState( isRefreshing ) )
-    }
-  }
-}
+
+const mapDispatchToProps = (dispatch) => ({
+  updateClubs: () => {
+    dispatch(syncStandingData());
+  },
+  updateRefreshState: (isRefreshing) => {
+    dispatch(updateRefreshState(isRefreshing));
+  },
+});
 
 export const Standing = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component)
+)(Component);
 
 export default Standing;
-

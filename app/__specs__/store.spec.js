@@ -1,8 +1,10 @@
-import store from "../store";
+/* global expect */
+/* eslint-env node, mocha */
 
-describe("./store", () => {
-  it("has standing state", () => {
-    expect( typeof store.getState().standing ).to.equal( 'object' );
+import store from '../store';
+
+describe('./store', () => {
+  it('has standing state', () => {
+    expect(typeof store.getState().standing).to.equal('object');
   });
-
 });

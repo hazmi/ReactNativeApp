@@ -1,8 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* eslint no-console: 0 */
 
 import { AppRegistry } from 'react-native';
 import App from './app/app.js';
@@ -13,4 +9,3 @@ console.ignoredYellowBox = [
 ];
 
 AppRegistry.registerComponent('ReactNativeApp', () => App);
-

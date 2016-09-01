@@ -1,15 +1,15 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import standing from './components/standing/reducer';
 
 const reducers = combineReducers({
-  standing: standing
+  standing,
 });
 
 const store = createStore(
     reducers,
-    applyMiddleware( thunk )
+    applyMiddleware(thunk)
 );
 
 export default store;
