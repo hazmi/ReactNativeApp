@@ -1,3 +1,5 @@
+/* eslint arrow-parens: 0 */
+
 import { connect } from 'react-redux';
 import { fetch } from 'fetch';
 import Component from './component';

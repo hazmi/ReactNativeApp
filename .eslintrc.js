@@ -6,6 +6,7 @@ module.exports = {
         "import"
     ],
     "rules": {
-      "react/jsx-filename-extension" : 0
+      "react/jsx-filename-extension" : 0,
+      "react/forbid-prop-types": 0
     }
 };

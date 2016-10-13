@@ -1,3 +1,5 @@
+/* eslint arrow-parens: 0 */
+
 import React, { Component, PropTypes } from 'react';
 import RN from 'react-native';
 

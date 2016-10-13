@@ -1,3 +1,5 @@
+/* eslint arrow-parens: 0 */
+
 export const addClub = (pos, name, played, gd, pts) => ({
   type: 'ADD_CLUB',
   data: {

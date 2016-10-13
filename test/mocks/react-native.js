@@ -1,4 +1,4 @@
-/* eslint react/prefer-es6-class: 0, react/prefer-stateless-function: 0 */
+/* eslint react/prefer-es6-class: 0, react/prefer-stateless-function: 0, arrow-parens: 0 */
 
 import React from 'react';
 
