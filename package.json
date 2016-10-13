@@ -10,11 +10,11 @@
   "dependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
     "fetch": "^1.1.0",
-    "react": "^15.2.0",
-    "react-dom": "^15.2.0",
-    "react-native": "^0.30.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-native": "^0.35.0",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
+    "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
@@ -22,11 +22,11 @@
     "babel-preset-react": "^6.11.1",
     "chai": "^3.5.0",
     "enzyme": "^2.4.1",
-    "eslint": "^3.4.0",
-    "eslint-config-airbnb": "^10.0.1",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.1",
-    "eslint-plugin-react": "^6.2.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
     "mocha": "^3.0.2",
     "react-addons-test-utils": "^15.2.0",
     "sinon": "^1.17.5"
